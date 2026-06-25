@@ -27,6 +27,38 @@ def wav_prompt_pair(folder_path) -> list[dict]:
 
     return pairs
 
+
+def gather_torgo(torgoroot) -> list[dict]:
+    final_pairs = []
+    for group in Path(torgoroot).iterdir():
+        if not group.is_dir():
+            continue
+
+        for person in group.iterdir():
+            if not person.is_dir():
+                continue
+
+            for session in person.iterdir():
+                if not session.is_dir() or session.name == "Notes":
+                    continue
+                
+                wav_folder_path = session / "wav_arrayMic"
+                if not wav_folder_path.exists():
+                    continue
+
+                pairs = wav_prompt_pair(wav_folder_path)
+
+                #add speaker and isolated vs. continuous to each pair
+                for pair in pairs:
+                    pair["person"] = person.name
+                    pair["is_isolated"] = len(pair["text"].split()) == 1
+                final_pairs.extend(pairs)
+    
+    
+    return final_pairs
+
+
+
 def dataset_from_pairs(pairs: list[dict]) -> Dataset:
     ds = Dataset.from_list(pairs)
     #resample to 16kHz automatically in case resampling needed
@@ -44,12 +76,18 @@ def build_training_info(row: dict) -> dict:
 
 if __name__ == "__main__":
     # print(prompt_from_txt('../data/torgo/F/F01/Session1/prompts/0007.txt'))
-    pairs = wav_prompt_pair("../data/TORGO/F/F01/Session1/wav_arrayMic")
-    ds = dataset_from_pairs(pairs)
-    ds = ds.map(build_training_info)
+    # pairs = wav_prompt_pair("../data/TORGO/F/F01/Session1/wav_arrayMic")
+    # ds = dataset_from_pairs(pairs)
+    # ds = ds.map(build_training_info)
 
-    print(ds)
-    import numpy as np
-    print("spect shape:", np.array(ds[0]["input_features"]).shape)
-    print("ids:", ds[1]["labels"])
+    # print(ds)
+    # import numpy as np
+    # print("spect shape:", np.array(ds[0]["input_features"]).shape)
+    # print("ids:", ds[1]["labels"])
 
+    pairs = gather_torgo('../data/torgo')
+    print(len(pairs))
+    print("speakers: ", sorted(set(p["person"] for p in pairs)))
+    iso = sum(1 for p in pairs if p["is_isolated"])
+    print(f"isolated: {iso}, continuous: {len(pairs) - iso}")
+    print("example:", pairs[0])
