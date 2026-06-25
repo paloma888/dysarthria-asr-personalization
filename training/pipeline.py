@@ -1,5 +1,10 @@
 import re
 from pathlib import Path
+import soundfile as sf
+from datasets import Dataset, Audio
+
+from transformers import WhisperProcessor
+processor = WhisperProcessor.from_pretrained("openai/whisper-small")
 
 def prompt_from_txt(path) -> str | None:
     with open(path) as f: text = f.read()
@@ -22,10 +27,29 @@ def wav_prompt_pair(folder_path) -> list[dict]:
 
     return pairs
 
+def dataset_from_pairs(pairs: list[dict]) -> Dataset:
+    ds = Dataset.from_list(pairs)
+    #resample to 16kHz automatically in case resampling needed
+    ds = ds.cast_column("audio", Audio(sampling_rate=16000))
+    return ds
+
+def build_training_info(row: dict) -> dict:
+    audio = row["audio"]
+    #spectrogram
+    row["input_features"] = processor.feature_extractor(audio["array"], sampling_rate=audio["sampling_rate"]
+    ).input_features[0]
+    #token ids
+    row["labels"] = processor.tokenizer(row["text"]).input_ids
+    return row
 
 if __name__ == "__main__":
     # print(prompt_from_txt('../data/torgo/F/F01/Session1/prompts/0007.txt'))
     pairs = wav_prompt_pair("../data/TORGO/F/F01/Session1/wav_arrayMic")
-    print(f"Found {len(pairs)} pairs")
-    for p in pairs[:5]:
-        print(p)
+    ds = dataset_from_pairs(pairs)
+    ds = ds.map(build_training_info)
+
+    print(ds)
+    import numpy as np
+    print("spect shape:", np.array(ds[0]["input_features"]).shape)
+    print("ids:", ds[1]["labels"])
+
