@@ -1,7 +1,9 @@
 import re
+import random
 from pathlib import Path
 import soundfile as sf
 from datasets import Dataset, Audio
+from collections import defaultdict
 
 from transformers import WhisperProcessor
 processor = WhisperProcessor.from_pretrained("openai/whisper-small")
@@ -57,7 +59,28 @@ def gather_torgo(torgoroot) -> list[dict]:
     
     return final_pairs
 
+def group_by_speaker(pairs: list[dict]) -> defaultdict:
+    groups = defaultdict(list)
+    for p in pairs:
+        groups[p["person"]].append(p)
 
+    return groups
+
+def train_val_test_split(speaker_groups: defaultdict):
+    random.seed(20)
+    train, val, test = [], [], []
+    for person, info_dicts in speaker_groups.items():
+        random.shuffle(info_dicts)
+
+        size = len(info_dicts)
+        endof_train = int(size * .8)
+        endof_val = int(size * .9)
+
+        train.extend(info_dicts[:endof_train])
+        val.extend(info_dicts[endof_train:endof_val])
+        test.extend(info_dicts[endof_val:])
+    
+    return train, val, test
 
 def dataset_from_pairs(pairs: list[dict]) -> Dataset:
     ds = Dataset.from_list(pairs)
@@ -77,17 +100,12 @@ def build_training_info(row: dict) -> dict:
 if __name__ == "__main__":
     # print(prompt_from_txt('../data/torgo/F/F01/Session1/prompts/0007.txt'))
     # pairs = wav_prompt_pair("../data/TORGO/F/F01/Session1/wav_arrayMic")
-    # ds = dataset_from_pairs(pairs)
-    # ds = ds.map(build_training_info)
-
-    # print(ds)
-    # import numpy as np
-    # print("spect shape:", np.array(ds[0]["input_features"]).shape)
-    # print("ids:", ds[1]["labels"])
 
     pairs = gather_torgo('../data/torgo')
     print(len(pairs))
-    print("speakers: ", sorted(set(p["person"] for p in pairs)))
-    iso = sum(1 for p in pairs if p["is_isolated"])
-    print(f"isolated: {iso}, continuous: {len(pairs) - iso}")
-    print("example:", pairs[0])
+    groups = group_by_speaker(pairs)
+    print({k: len(v) for k, v in groups.items()})
+
+    train, val, test = train_val_test_split(groups)
+    print(f"train: {len(train)}, val: {len(val)}, test: {len(test)}")
+    print(f"total: {len(train) + len(val) + len(test)}")
