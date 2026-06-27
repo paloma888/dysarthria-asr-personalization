@@ -1,5 +1,6 @@
 import re
 import random
+import string
 from pathlib import Path
 import soundfile as sf
 from datasets import Dataset, Audio
@@ -7,6 +8,11 @@ from collections import defaultdict
 
 from transformers import WhisperProcessor
 processor = WhisperProcessor.from_pretrained("openai/whisper-small")
+
+#keeping punctuation now for natural predictions, will need to strip punctuation at eval time
+def normalize_text(text: str) -> str:
+    return text.lower().strip()
+
 
 def prompt_from_txt_torgo(path) -> str | None:
     with open(path) as f: text = f.read()
@@ -25,6 +31,7 @@ def wav_prompt_pair_torgo(folder_path) -> list[dict]:
             continue
         text = prompt_from_txt_torgo(promptpath)
         if text is not None:
+            text = normalize_text(text)
             pairs.append({"audio": str(wavpath), "text": text})
 
     return pairs
@@ -93,6 +100,7 @@ def gather_uaspeech(audioroot, mlfroot) -> list[dict]:
             if stem.endswith("_M5"):
                 text = stem_to_prompt.get(stem)
                 if text:
+                    text = normalize_text(text)
                     final_pairs.append({
                         "audio": str(wavpath), 
                         "text": text, 
@@ -102,7 +110,7 @@ def gather_uaspeech(audioroot, mlfroot) -> list[dict]:
     
     return final_pairs
 
-#fix later: "text" for TORGO is lowercase while UASpeech is uppercase
+
 
 def group_by_speaker(pairs: list[dict]) -> defaultdict:
     groups = defaultdict(list)
