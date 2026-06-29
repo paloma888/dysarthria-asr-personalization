@@ -119,7 +119,7 @@ def group_by_speaker(pairs: list[dict]) -> defaultdict:
 
     return groups
 
-def train_val_test_split(speaker_groups: defaultdict):
+def train_val_test_split_torgo(speaker_groups: defaultdict):
     random.seed(20)
     train, val, test = [], [], []
     for person, info_dicts in speaker_groups.items():
@@ -134,6 +134,26 @@ def train_val_test_split(speaker_groups: defaultdict):
         test.extend(info_dicts[endof_val:])
     
     return train, val, test
+
+
+def train_val_test_split_ua(pairs: list[dict]):
+    train, b2 = [], []
+    for pair in pairs:
+        block = Path(pair["audio"]).stem.split("_")[1]
+        if block == "B1" or block == "B3":
+            train.append(pair)
+        elif block == "B2":
+            b2.append(pair)
+    
+    random.seed(20)
+    random.shuffle(b2)
+    midpoint_b2 = len(b2) // 2
+    val = b2[:midpoint_b2]
+    test = b2[midpoint_b2:]
+
+    return train, val, test
+
+
 
 def dataset_from_pairs(pairs: list[dict]) -> Dataset:
     ds = Dataset.from_list(pairs)
@@ -155,11 +175,11 @@ if __name__ == "__main__":
     # pairs = wav_prompt_pair("../data/TORGO/F/F01/Session1/wav_arrayMic")
 
     torgo = gather_torgo('../data/torgo')
-    print(f"total torgo samples {len(torgo)}")
+    # print(f"total torgo samples {len(torgo)}")
     ua = gather_uaspeech('../data/UASpeech/audio', '../data/UASpeech/mlf')
-    print(f"total UASpeech samples: {len(ua)}")
-    print("speakers:", sorted(set(p["person"] for p in ua)))
-    print("sample:", ua[0])
+    # print(f"total UASpeech samples: {len(ua)}")
+    # print("speakers:", sorted(set(p["person"] for p in ua)))
+    # print("sample:", ua[0])
     # groups = group_by_speaker(pairs)
     # print({k: len(v) for k, v in groups.items()})
 
@@ -167,9 +187,13 @@ if __name__ == "__main__":
     # print(f"train: {len(train)}, val: {len(val)}, test: {len(test)}")
     # print(f"total: {len(train) + len(val) + len(test)}")
 
-    mics = set()
-    for p in ua:
-        stem = Path(p["audio"]).stem
-        mics.add(stem.split("_")[-1])
-    print("mics present in results:", mics)
+    # mics = set()
+    # for p in ua:
+    #     stem = Path(p["audio"]).stem
+    #     mics.add(stem.split("_")[-1])
+    # print("mics present in results:", mics)
+
+    train, val, test = train_val_test_split_ua(ua)
+    print(f"train: {len(train)}, val: {len(val)}, test: {len(test)}")
+    print(f"total utterances: {len(train)+len(val)+len(test)}")
 
