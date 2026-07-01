@@ -9,6 +9,9 @@ from collections import defaultdict
 from transformers import WhisperProcessor
 processor = WhisperProcessor.from_pretrained("openai/whisper-small")
 
+from dataclasses import dataclass
+from typing import Any
+
 #keeping punctuation now for natural predictions, will need to strip punctuation at eval time
 def normalize_text(text: str) -> str:
     return text.lower().strip()
@@ -182,6 +185,23 @@ def build_training_info(row: dict) -> dict:
     #token ids
     row["labels"] = processor.tokenizer(row["text"]).input_ids
     return row
+
+
+@dataclass
+class DataCollatorSpeechSeq2Seq:
+  processor: Any
+  def __call__(self, features):
+    input_features = [{"input_features": f["input_features"]} for f in features]
+    batch = self.processor.feature_extractor.pad(input_features, return_tensors="pt")
+    label_features = [{"input_ids": f["labels"]} for f in features]
+    labels_batch = self.processor.tokenizer.pad(label_features, return_tensors="pt")
+    labels = labels_batch["input_ids"].masked_fill(labels_batch.attention_mask.ne(1), -100)
+
+    if (labels[:, 0] == self.processor.tokenizer.bos_token_id).all().cpu().item():
+      labels = labels[:, 1:]
+    batch["labels"] = labels
+    return batch
+  
 
 if __name__ == "__main__":
     # print(prompt_from_txt('../data/torgo/F/F01/Session1/prompts/0007.txt'))
