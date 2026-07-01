@@ -36,6 +36,19 @@ def wav_prompt_pair_torgo(folder_path) -> list[dict]:
 
     return pairs
 
+def filter_valid_audio(pairs: list[dict]) -> list[dict]:
+    final_pairs = []
+    bad_files = 0
+    for item in pairs:
+        try:
+            sf.info(item["audio"])
+            final_pairs.append(item)
+        except Exception as e:
+            bad_files += 1
+    
+    print(f"Dropped {bad_files} bad files.")
+    return final_pairs
+
 
 def gather_torgo(torgoroot) -> list[dict]:
     final_pairs = []
@@ -175,8 +188,10 @@ if __name__ == "__main__":
     # pairs = wav_prompt_pair("../data/TORGO/F/F01/Session1/wav_arrayMic")
 
     torgo = gather_torgo('../data/torgo')
+    torgo = filter_valid_audio(torgo)
     # print(f"total torgo samples {len(torgo)}")
     ua = gather_uaspeech('../data/UASpeech/audio', '../data/UASpeech/mlf')
+    ua = filter_valid_audio(ua)
     # print(f"total UASpeech samples: {len(ua)}")
     # print("speakers:", sorted(set(p["person"] for p in ua)))
     # print("sample:", ua[0])
