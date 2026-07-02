@@ -6,7 +6,7 @@ import jiwer
 def inference(model, audio, device):
     input_features = processor.feature_extractor(audio["array"], sampling_rate=audio["sampling_rate"], return_tensors="pt").input_features.to(device)
     with torch.no_grad():
-      tokens = model.generate(input_features, language="en", task="transcribe")
+      tokens = model.generate(input_features, language="en", task="transcribe", max_new_tokens=64)
     
     predicted_text = processor.tokenizer.batch_decode(tokens, skip_special_tokens=True)[0]
     return predicted_text
