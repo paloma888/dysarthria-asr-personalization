@@ -1,0 +1,141 @@
+filename,text,split
+,up,train
+,at,train
+,out,train
+,ate,train
+,egg,train
+,about,train
+,book,train
+,oil,train
+,earth,train
+,boat,train
+,art,train
+,off,train
+,it,train
+,feet,train
+,good,train
+,tap,train
+,kick,train
+,big,train
+,cat,train
+,dog,train
+,pat,train
+,cap,train
+,top,train
+,cup,train
+,dad,train
+,size,train
+,buzz,train
+,bath,train
+,ship,train
+,safe,train
+,sun,train
+,five,train
+,zoo,train
+,fan,train
+,wash,train
+,fish,train
+,jump,train
+,watch,train
+,my juice,train
+,page,train
+,catch,train
+,chin,train
+,man,train
+,moon,train
+,sing,train
+,no,train
+,mom,train
+,ring,train
+,name,train
+,way,train
+,read,train
+,run,train
+,roll,train
+,love,train
+,yellow,train
+,light,train
+,wall,train
+,yes,train
+,red,train
+,glass,train
+,blue,train
+,drink,train
+,stop,train
+,please,train
+,clock,train
+,green,train
+,street,train
+,black,train
+,spring,train
+,done,train
+,long,train
+,day,train
+,more,train
+,want,train
+,home,train
+,small,train
+,yeah,train
+,cold,train
+,water,train
+,go,train
+,fast,train
+,list,train
+,ask,train
+,hand,train
+,milk,train
+,desk,train
+,store,train
+,near,train
+,car,train
+,hair,train
+,sure,train
+,kitchen,train
+,outside,train
+,jacket,train
+,cookie,train
+,shorts,train
+,eat,test
+,sit,test
+,bat,test
+,tag,test
+,pit,test
+,van,test
+,wave,test
+,then,test
+,this,train
+,edge,test
+,chair,test
+,nine,test
+,song,test
+,year,test
+,we,test
+,smile,test
+,three,test
+,hot,test
+,need,test
+,night,test
+,help,test
+,bird,test
+,blanket,test
+,i need help,train
+,i'm hungry,train
+,be careful,test
+,come here,train
+,i miss you,test
+,go home,test
+,don't sing,train
+,hear music,test
+,i want to watch tv,train
+,my favorite,train
+,two sisters and one brother,train
+,i'm mom's daughter,train
+,no cheese,train
+,no toast,train
+,good night,test
+,good morning,test
+,why are you mad at me?,train
+,what?,train
+,i said mom's here,test
+,i remember,test
+,i'm tired,test
