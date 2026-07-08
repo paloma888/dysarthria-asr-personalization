@@ -1,141 +1,171 @@
-filename,text,split
-,up,train
-,at,train
-,out,train
-,ate,train
-,egg,train
-,about,train
-,book,train
-,oil,train
-,earth,train
-,boat,train
-,art,train
-,off,train
-,it,train
-,feet,train
-,good,train
-,tap,train
-,kick,train
-,big,train
-,cat,train
-,dog,train
-,pat,train
-,cap,train
-,top,train
-,cup,train
-,dad,train
-,size,train
-,buzz,train
-,bath,train
-,ship,train
-,safe,train
-,sun,train
-,five,train
-,zoo,train
-,fan,train
-,wash,train
-,fish,train
-,jump,train
-,watch,train
-,my juice,train
-,page,train
-,catch,train
-,chin,train
-,man,train
-,moon,train
-,sing,train
-,no,train
-,mom,train
-,ring,train
-,name,train
-,way,train
-,read,train
-,run,train
-,roll,train
-,love,train
-,yellow,train
-,light,train
-,wall,train
-,yes,train
-,red,train
-,glass,train
-,blue,train
-,drink,train
-,stop,train
-,please,train
-,clock,train
-,green,train
-,street,train
-,black,train
-,spring,train
-,done,train
-,long,train
-,day,train
-,more,train
-,want,train
-,home,train
-,small,train
-,yeah,train
-,cold,train
-,water,train
-,go,train
-,fast,train
-,list,train
-,ask,train
-,hand,train
-,milk,train
-,desk,train
-,store,train
-,near,train
-,car,train
-,hair,train
-,sure,train
-,kitchen,train
-,outside,train
-,jacket,train
-,cookie,train
-,shorts,train
-,eat,test
-,sit,test
-,bat,test
-,tag,test
-,pit,test
-,van,test
-,wave,test
-,then,test
-,this,train
-,edge,test
-,chair,test
-,nine,test
-,song,test
-,year,test
-,we,test
-,smile,test
-,three,test
-,hot,test
-,need,test
-,night,test
-,help,test
-,bird,test
-,blanket,test
-,i need help,train
-,i'm hungry,train
-,be careful,test
-,come here,train
-,i miss you,test
-,go home,test
-,don't sing,train
-,hear music,test
-,i want to watch tv,train
-,my favorite,train
-,two sisters and one brother,train
-,i'm mom's daughter,train
-,no cheese,train
-,no toast,train
-,good night,test
-,good morning,test
-,why are you mad at me?,train
-,what?,train
-,i said mom's here,test
-,i remember,test
-,i'm tired,test
+filename,text,split,eval_set
+,up,train,neither
+,at,train,neither
+,out,train,neither
+,ate,train,neither
+,egg,train,neither
+,about,train,neither
+,book,train,neither
+,oil,train,neither
+,earth,train,neither
+,boat,train,neither
+,art,train,neither
+,off,train,neither
+,it,train,neither
+,feet,train,neither
+,tap,train,neither
+,kick,train,neither
+,big,train,neither
+,cat,train,neither
+,dog,train,neither
+,pat,train,neither
+,cap,train,neither
+,top,train,neither
+,cup,train,neither
+,dad,train,neither
+,size,train,neither
+,buzz,train,neither
+,bath,train,neither
+,ship,train,neither
+,safe,train,neither
+,sun,train,neither
+,five,train,neither
+,zoo,train,neither
+,fan,train,neither
+,wash,train,neither
+,fish,train,neither
+,jump,train,neither
+,watch,train,neither
+,page,train,neither
+,catch,train,neither
+,chin,train,neither
+,man,train,neither
+,moon,train,neither
+,sing,train,neither
+,no,train,neither
+,mom,train,neither
+,ring,train,neither
+,name,train,neither
+,way,train,neither
+,read,train,neither
+,run,train,neither
+,roll,train,neither
+,love,train,neither
+,yellow,train,neither
+,light,train,neither
+,wall,train,neither
+,yes,train,neither
+,red,train,neither
+,glass,train,neither
+,blue,train,neither
+,drink,train,neither
+,stop,train,neither
+,please,train,neither
+,clock,train,neither
+,green,train,neither
+,street,train,neither
+,black,train,neither
+,spring,train,neither
+,done,train,neither
+,long,train,neither
+,whatever,train,neither
+,day,train,neither
+,more,train,neither
+,want,train,neither
+,home,train,neither
+,small,train,neither
+,yeah,train,neither
+,cold,train,neither
+,water,train,neither
+,go,train,neither
+,fast,train,neither
+,list,train,neither
+,ask,train,neither
+,hand,train,neither
+,milk,train,neither
+,desk,train,neither
+,store,train,neither
+,near,train,neither
+,car,train,neither
+,hair,train,neither
+,sure,train,neither
+,this,train,neither
+,need,train,neither
+,kitchen,train,neither
+,outside,train,neither
+,jacket,train,neither
+,cookie,train,neither
+,shorts,train,neither
+,what?,train,neither
+,come here,train,neither
+,need help,train,neither
+,my juice,train,neither
+,don't sing,train,neither
+,watch tv,train,neither
+,alex is my favorite,train,neither
+,two sisters and one brother,train,neither
+,mom's here,train,neither
+,no cheese,train,neither
+,no toast,train,neither
+,why are you mad at me?,train,neither
+,where are you going?,train,neither
+,eat,test,A
+,sit,test,A
+,bat,test,A
+,tag,test,A
+,pit,test,A
+,van,test,A
+,wave,test,A
+,look,test,A
+,then,test,A
+,edge,test,A
+,chair,test,A
+,nine,test,A
+,song,test,A
+,year,test,A
+,we,test,A
+,smile,test,A
+,three,test,A
+,hot,test,A
+,night,test,A
+,bird,test,A
+,blanket,test,A
+,be careful,test,A
+,i miss him,test,A
+,hear music,test,A
+,good night,test,A
+,good morning,test,A
+,i'm hungry,test,A
+,i remember,test,A
+,i'm tired,test,A
+,i feel sick,test,A
+,close the door,test,A
+,leave him alone,test,A
+,sit down,test,A
+,let's play,test,A
+,turn around,test,A
+,not now,test,A
+,wait a minute,test,A
+,that's too loud,test,A
+,you're annoying,test,A
+,i'm scared,test,A
+,that's mine,test,A
+,try again,test,A
+,move over,test,A
+,i can't find the toy,test,A
+,be quiet,test,A
+,dinner's ready,test,A
+,i'm upstairs,test,A
+,put your shoes on,test,A
+,cap,test,B
+,cat,test,B
+,wash,test,B
+,watch,test,B
+,read,test,B
+,ring,test,B
+,put on the cap,test,B
+,pet the cat,test,B
+,watch the game,test,B
+,wash the clothes,test,B
+,read the book,test,B
+,ring the bell,test,B
