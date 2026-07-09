@@ -55,15 +55,15 @@ def filter_valid_audio(pairs: list[dict]) -> list[dict]:
 
 def gather_torgo(torgoroot) -> list[dict]:
     final_pairs = []
-    for group in Path(torgoroot).iterdir():
+    for group in sorted(Path(torgoroot).iterdir()):
         if not group.is_dir():
             continue
 
-        for person in group.iterdir():
+        for person in sorted(group.iterdir()):
             if not person.is_dir():
                 continue
 
-            for session in person.iterdir():
+            for session in sorted(person.iterdir()):
                 if not session.is_dir() or session.name == "Notes":
                     continue
                 
@@ -102,7 +102,7 @@ def gather_uaspeech(audioroot, mlfroot) -> list[dict]:
     final_pairs = []
     normalized_audio_path = Path(audioroot) / "normalized"
 
-    for person in normalized_audio_path.iterdir():
+    for person in sorted(normalized_audio_path.iterdir()):
         if not person.is_dir():
             continue
         
@@ -209,9 +209,20 @@ if __name__ == "__main__":
 
     torgo = gather_torgo('../data/torgo')
     torgo = filter_valid_audio(torgo)
-    # print(f"total torgo samples {len(torgo)}")
+    print(f"total torgo samples {len(torgo)}")
+
     ua = gather_uaspeech('../data/UASpeech/audio', '../data/UASpeech/mlf')
     ua = filter_valid_audio(ua)
+
+    torgo_groups = group_by_speaker(torgo)
+    train_torgo, val_torgo, test_torgo = train_val_test_split_torgo(torgo_groups)
+
+    train_ua, val_ua, test_ua = train_val_test_split_ua(ua)
+    total_train = train_torgo + train_ua
+    total_val = val_torgo + val_ua
+    total_test = test_torgo + test_ua
+    cont_test = sum(1 for p in total_test if not p["is_isolated"])
+    print("total continuous in test set: ", cont_test)
     # print(f"total UASpeech samples: {len(ua)}")
     # print("speakers:", sorted(set(p["person"] for p in ua)))
     # print("sample:", ua[0])
@@ -227,8 +238,6 @@ if __name__ == "__main__":
     #     stem = Path(p["audio"]).stem
     #     mics.add(stem.split("_")[-1])
     # print("mics present in results:", mics)
-
-    train, val, test = train_val_test_split_ua(ua)
-    print(f"train: {len(train)}, val: {len(val)}, test: {len(test)}")
-    print(f"total utterances: {len(train)+len(val)+len(test)}")
+    print(f"train: {len(total_train)}, val: {len(total_val)}, test: {len(total_test)}")
+    print(f"total utterances: {len(total_train)+len(total_val)+len(total_test)}")
 
