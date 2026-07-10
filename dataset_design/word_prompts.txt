@@ -89,7 +89,9 @@ mi_near.wav,near,train,neither
 mi_car.wav,car,train,neither
 mi_hair.wav,hair,train,neither
 mi_sure.wav,sure,train,neither
+mi_sure_1.wav,sure,train,neither
 mi_this.wav,this,train,neither
+mi_this_1.wav,this,train,neither
 mi_blood.wav,blood,train,neither
 mi_need.wav,need,train,neither
 mi_kitchen.wav,kitchen,train,neither
@@ -101,8 +103,10 @@ mi_what.wav,what?,train,neither
 mi_comehere.wav,come here,train,neither
 mi_needhelp.wav,need help,train,neither
 mi_myjuice.wav,my juice,train,neither
+mi_myjuice_1.wav,my juice,train,neither
 mi_dontsing.wav,don't sing,train,neither
 mi_watchtv.wav,watch tv,train,neither
+mi_watchtv_1.wav,watch tv,train,neither
 mi_alexismyfavorite.wav,alex is my favorite,train,neither
 mi_twosistersandonebrother.wav,two sisters and one brother,train,neither
 mi_momshere.wav,mom's here,train,neither
@@ -110,16 +114,18 @@ mi_nocheese.wav,no cheese,train,neither
 mi_notoast.wav,no toast,train,neither
 mi_whyareyoumadatme.wav,why are you mad at me?,train,neither
 mi_whereareyougoing.wav,where are you going?,train,neither
-,my foot hurts,train,neither
-,go to bed,train,neither
-,let me do it,train,neither
-,elsa and anna,train,neither
-,in my room,train,neither
-,listen to me,train,neither
-,hold my hand,train,neither
-,talk to mom,train,neither
-,give it back,train,neither
-,go to school,train,neither
+mi_myfoothurts.wav,my foot hurts,train,neither
+mi_gotobed.wav,go to bed,train,neither
+mi_letmedoit.wav,let me do it,train,neither
+mi_elsaandanna.wav,elsa and anna,train,neither
+mi_inmyroom.wav,in my room,train,neither
+mi_listentome.wav,listen to me,train,neither
+mi_listentome_1.wav,listen to me,train,neither
+mi_holdmyhand.wav,hold my hand,train,neither
+mi_talktomom.wav,talk to mom,train,neither
+mi_giveitback.wav,give it back,train,neither
+mi_giveitback_1.wav,give it back,train,neither
+mi_gotoschool.wav,go to school,train,neither
 mi_eat.wav,eat,test,A
 mi_sit.wav,sit,test,A
 mi_bat.wav,bat,test,A
@@ -167,15 +173,15 @@ mi_bequiet.wav,be quiet,test,A
 mi_dinnersready.wav,dinner's ready,test,A
 mi_imupstairs.wav,i'm upstairs,test,A
 mi_putyourshoeson.wav,put your shoes on,test,A
-,i feel better,test,A
-,open the window,test,A
-,i'm not ready,test,A
-,i had a dream,test,A
-,look over there,test,A
-,lock the door,test,A
-,draw a picture,test,A
-,time for lunch,test,A
-,you're so beautiful,test,A
+mi_ifeelbetter.wav,i feel better,test,A
+mi_openthewindow.wav,open the window,test,A
+mi_imnotready.wav,i'm not ready,test,A
+mi_ihadadream.wav,i had a dream,test,A
+mi_lookoverthere.wav,look over there,test,A
+mi_lockthedoor.wav,lock the door,test,A
+mi_drawapicture.wav,draw a picture,test,A
+mi_itstimeforlunch.wav,it's time for lunch,test,A
+mi_imbeautiful.wav,i'm beautiful,test,A
 mi_cap_B.wav,cap,test,B
 mi_cat_B.wav,cat,test,B
 mi_wash_B.wav,wash,test,B
@@ -185,6 +191,6 @@ mi_ring_B.wav,ring,test,B
 mi_putonthecap.wav,put on the cap,test,B
 mi_petthecat.wav,pet the cat,test,B
 mi_watchthegame.wav,watch the game,test,B
-,wash the clothes,test,B
+mi_washtheclothes.wav,wash the clothes,test,B
 mi_readthebook.wav,read the book,test,B
 mi_ringthebell.wav,ring the bell,test,B
