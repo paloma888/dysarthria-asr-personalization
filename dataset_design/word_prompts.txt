@@ -1,171 +1,190 @@
 filename,text,split,eval_set
-,up,train,neither
-,at,train,neither
-,out,train,neither
-,ate,train,neither
-,egg,train,neither
-,about,train,neither
-,book,train,neither
-,oil,train,neither
-,earth,train,neither
-,boat,train,neither
-,art,train,neither
-,off,train,neither
-,it,train,neither
-,feet,train,neither
-,tap,train,neither
-,kick,train,neither
-,big,train,neither
-,cat,train,neither
-,dog,train,neither
-,pat,train,neither
-,cap,train,neither
-,top,train,neither
-,cup,train,neither
-,dad,train,neither
-,size,train,neither
-,buzz,train,neither
-,bath,train,neither
-,ship,train,neither
-,safe,train,neither
-,sun,train,neither
-,five,train,neither
-,zoo,train,neither
-,fan,train,neither
-,wash,train,neither
-,fish,train,neither
-,jump,train,neither
-,watch,train,neither
-,page,train,neither
-,catch,train,neither
-,chin,train,neither
-,man,train,neither
-,moon,train,neither
-,sing,train,neither
-,no,train,neither
-,mom,train,neither
-,ring,train,neither
-,name,train,neither
-,way,train,neither
-,read,train,neither
-,run,train,neither
-,roll,train,neither
-,love,train,neither
-,yellow,train,neither
-,light,train,neither
-,wall,train,neither
-,yes,train,neither
-,red,train,neither
-,glass,train,neither
-,blue,train,neither
-,drink,train,neither
-,stop,train,neither
-,please,train,neither
-,clock,train,neither
-,green,train,neither
-,street,train,neither
-,black,train,neither
-,spring,train,neither
-,done,train,neither
-,long,train,neither
-,whatever,train,neither
-,day,train,neither
-,more,train,neither
-,want,train,neither
-,home,train,neither
-,small,train,neither
-,yeah,train,neither
-,cold,train,neither
-,water,train,neither
-,go,train,neither
-,fast,train,neither
-,list,train,neither
-,ask,train,neither
-,hand,train,neither
-,milk,train,neither
-,desk,train,neither
-,store,train,neither
-,near,train,neither
-,car,train,neither
-,hair,train,neither
-,sure,train,neither
-,this,train,neither
-,need,train,neither
-,kitchen,train,neither
-,outside,train,neither
-,jacket,train,neither
-,cookie,train,neither
-,shorts,train,neither
-,what?,train,neither
-,come here,train,neither
-,need help,train,neither
-,my juice,train,neither
-,don't sing,train,neither
-,watch tv,train,neither
-,alex is my favorite,train,neither
-,two sisters and one brother,train,neither
-,mom's here,train,neither
-,no cheese,train,neither
-,no toast,train,neither
-,why are you mad at me?,train,neither
-,where are you going?,train,neither
-,eat,test,A
-,sit,test,A
-,bat,test,A
-,tag,test,A
-,pit,test,A
-,van,test,A
-,wave,test,A
-,look,test,A
-,then,test,A
-,edge,test,A
-,chair,test,A
-,nine,test,A
-,song,test,A
-,year,test,A
-,we,test,A
-,smile,test,A
-,three,test,A
-,hot,test,A
-,night,test,A
-,bird,test,A
-,blanket,test,A
-,be careful,test,A
-,i miss him,test,A
-,hear music,test,A
-,good night,test,A
-,good morning,test,A
-,i'm hungry,test,A
-,i remember,test,A
-,i'm tired,test,A
-,i feel sick,test,A
-,close the door,test,A
-,leave him alone,test,A
-,sit down,test,A
-,let's play,test,A
-,turn around,test,A
-,not now,test,A
-,wait a minute,test,A
-,that's too loud,test,A
-,you're annoying,test,A
-,i'm scared,test,A
-,that's mine,test,A
-,try again,test,A
-,move over,test,A
-,i can't find the toy,test,A
-,be quiet,test,A
-,dinner's ready,test,A
-,i'm upstairs,test,A
-,put your shoes on,test,A
-,cap,test,B
-,cat,test,B
-,wash,test,B
-,watch,test,B
-,read,test,B
-,ring,test,B
-,put on the cap,test,B
-,pet the cat,test,B
-,watch the game,test,B
+mi_up.wav,up,train,neither
+mi_at.wav,at,train,neither
+mi_out.wav,out,train,neither
+mi_ate.wav,ate,train,neither
+mi_egg.wav,egg,train,neither
+mi_about.wav,about,train,neither
+mi_book.wav,book,train,neither
+mi_oil.wav,oil,train,neither
+mi_earth.wav,earth,train,neither
+mi_boat.wav,boat,train,neither
+mi_art.wav,art,train,neither
+mi_off.wav,off,train,neither
+mi_it.wav,it,train,neither
+mi_feet.wav,feet,train,neither
+mi_tap.wav,tap,train,neither
+mi_kick.wav,kick,train,neither
+mi_big.wav,big,train,neither
+mi_cat.wav,cat,train,neither
+mi_dog.wav,dog,train,neither
+mi_pat.wav,pat,train,neither
+mi_cap.wav,cap,train,neither
+mi_top.wav,top,train,neither
+mi_cup.wav,cup,train,neither
+mi_dad.wav,dad,train,neither
+mi_size.wav,size,train,neither
+mi_buzz.wav,buzz,train,neither
+mi_bath.wav,bath,train,neither
+mi_ship.wav,ship,train,neither
+mi_safe.wav,safe,train,neither
+mi_sun.wav,sun,train,neither
+mi_five.wav,five,train,neither
+mi_zoo.wav,zoo,train,neither
+mi_fan.wav,fan,train,neither
+mi_wash.wav,wash,train,neither
+mi_fish.wav,fish,train,neither
+mi_jump.wav,jump,train,neither
+mi_watch.wav,watch,train,neither
+mi_page.wav,page,train,neither
+mi_catch.wav,catch,train,neither
+mi_chin.wav,chin,train,neither
+mi_man.wav,man,train,neither
+mi_moon.wav,moon,train,neither
+mi_sing.wav,sing,train,neither
+mi_no.wav,no,train,neither
+mi_mom.wav,mom,train,neither
+mi_ring.wav,ring,train,neither
+mi_name.wav,name,train,neither
+mi_way.wav,way,train,neither
+mi_read.wav,read,train,neither
+mi_run.wav,run,train,neither
+mi_roll.wav,roll,train,neither
+mi_love.wav,love,train,neither
+mi_yellow.wav,yellow,train,neither
+mi_light.wav,light,train,neither
+mi_wall.wav,wall,train,neither
+mi_yes.wav,yes,train,neither
+mi_red.wav,red,train,neither
+mi_glass.wav,glass,train,neither
+mi_blue.wav,blue,train,neither
+mi_drink.wav,drink,train,neither
+mi_stop.wav,stop,train,neither
+mi_please.wav,please,train,neither
+mi_clock.wav,clock,train,neither
+mi_green.wav,green,train,neither
+mi_street.wav,street,train,neither
+mi_black.wav,black,train,neither
+mi_spring.wav,spring,train,neither
+mi_done.wav,done,train,neither
+mi_long.wav,long,train,neither
+mi_whatever.wav,whatever,train,neither
+mi_day.wav,day,train,neither
+mi_more.wav,more,train,neither
+mi_want.wav,want,train,neither
+mi_home.wav,home,train,neither
+mi_small.wav,small,train,neither
+mi_yeah.wav,yeah,train,neither
+mi_cold.wav,cold,train,neither
+mi_water.wav,water,train,neither
+mi_go.wav,go,train,neither
+mi_fast.wav,fast,train,neither
+mi_list.wav,list,train,neither
+mi_ask.wav,ask,train,neither
+mi_hand.wav,hand,train,neither
+mi_milk.wav,milk,train,neither
+mi_desk.wav,desk,train,neither
+mi_store.wav,store,train,neither
+mi_near.wav,near,train,neither
+mi_car.wav,car,train,neither
+mi_hair.wav,hair,train,neither
+mi_sure.wav,sure,train,neither
+mi_this.wav,this,train,neither
+mi_blood.wav,blood,train,neither
+mi_need.wav,need,train,neither
+mi_kitchen.wav,kitchen,train,neither
+mi_outside.wav,outside,train,neither
+mi_jacket.wav,jacket,train,neither
+mi_cookie.wav,cookie,train,neither
+mi_shorts.wav,shorts,train,neither
+mi_what.wav,what?,train,neither
+mi_comehere.wav,come here,train,neither
+mi_needhelp.wav,need help,train,neither
+mi_myjuice.wav,my juice,train,neither
+mi_dontsing.wav,don't sing,train,neither
+mi_watchtv.wav,watch tv,train,neither
+mi_alexismyfavorite.wav,alex is my favorite,train,neither
+mi_twosistersandonebrother.wav,two sisters and one brother,train,neither
+mi_momshere.wav,mom's here,train,neither
+mi_nocheese.wav,no cheese,train,neither
+mi_notoast.wav,no toast,train,neither
+mi_whyareyoumadatme.wav,why are you mad at me?,train,neither
+mi_whereareyougoing.wav,where are you going?,train,neither
+,my foot hurts,train,neither
+,go to bed,train,neither
+,let me do it,train,neither
+,elsa and anna,train,neither
+,in my room,train,neither
+,listen to me,train,neither
+,hold my hand,train,neither
+,talk to mom,train,neither
+,give it back,train,neither
+,go to school,train,neither
+mi_eat.wav,eat,test,A
+mi_sit.wav,sit,test,A
+mi_bat.wav,bat,test,A
+mi_tag.wav,tag,test,A
+mi_pit.wav,pit,test,A
+mi_van.wav,van,test,A
+mi_wave.wav,wave,test,A
+mi_look.wav,look,test,A
+mi_then.wav,then,test,A
+mi_edge.wav,edge,test,A
+mi_chair.wav,chair,test,A
+mi_nine.wav,nine,test,A
+mi_song.wav,song,test,A
+mi_year.wav,year,test,A
+mi_we.wav,we,test,A
+mi_smile.wav,smile,test,A
+mi_three.wav,three,test,A
+mi_hot.wav,hot,test,A
+mi_night.wav,night,test,A
+mi_bird.wav,bird,test,A
+mi_blanket.wav,blanket,test,A
+mi_becareful.wav,be careful,test,A
+mi_hearmusic.wav,hear music,test,A
+mi_goodnight.wav,good night,test,A
+mi_goodmorning.wav,good morning,test,A
+mi_imhungry.wav,i'm hungry,test,A
+mi_iremember.wav,i remember,test,A
+mi_imtired.wav,i'm tired,test,A
+mi_ifeelsick.wav,i feel sick,test,A
+mi_closethedoor.wav,close the door,test,A
+mi_leavehimalone.wav,leave him alone,test,A
+mi_sitdown.wav,sit down,test,A
+mi_letsplay.wav,let's play,test,A
+mi_turnaround.wav,turn around,test,A
+mi_notnow.wav,not now,test,A
+mi_waitaminute.wav,wait a minute,test,A
+mi_thatstooloud.wav,that's too loud,test,A
+mi_youreannoying.wav,you're annoying,test,A
+mi_imscared.wav,i'm scared,test,A
+mi_thatsmine.wav,that's mine,test,A
+mi_tryagain.wav,try again,test,A
+mi_moveover.wav,move over,test,A
+mi_icantfindthetoy.wav,i can't find the toy,test,A
+mi_bequiet.wav,be quiet,test,A
+mi_dinnersready.wav,dinner's ready,test,A
+mi_imupstairs.wav,i'm upstairs,test,A
+mi_putyourshoeson.wav,put your shoes on,test,A
+,i feel better,test,A
+,open the window,test,A
+,i'm not ready,test,A
+,i had a dream,test,A
+,look over there,test,A
+,lock the door,test,A
+,draw a picture,test,A
+,time for lunch,test,A
+,you're so beautiful,test,A
+mi_cap_B.wav,cap,test,B
+mi_cat_B.wav,cat,test,B
+mi_wash_B.wav,wash,test,B
+mi_watch_B.wav,watch,test,B
+mi_read_B.wav,read,test,B
+mi_ring_B.wav,ring,test,B
+mi_putonthecap.wav,put on the cap,test,B
+mi_petthecat.wav,pet the cat,test,B
+mi_watchthegame.wav,watch the game,test,B
 ,wash the clothes,test,B
-,read the book,test,B
-,ring the bell,test,B
+mi_readthebook.wav,read the book,test,B
+mi_ringthebell.wav,ring the bell,test,B
