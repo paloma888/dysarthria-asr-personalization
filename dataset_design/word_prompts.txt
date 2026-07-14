@@ -52,7 +52,6 @@ mi_run.wav,run,train,neither
 mi_roll.wav,roll,train,neither
 mi_love.wav,love,train,neither
 mi_yellow.wav,yellow,train,neither
-mi_light.wav,light,train,neither
 mi_wall.wav,wall,train,neither
 mi_yes.wav,yes,train,neither
 mi_red.wav,red,train,neither
