@@ -6,7 +6,6 @@ mi_ate.wav,ate,train,neither
 mi_egg.wav,egg,train,neither
 mi_about.wav,about,train,neither
 mi_book.wav,book,train,neither
-mi_oil.wav,oil,train,neither
 mi_earth.wav,earth,train,neither
 mi_boat.wav,boat,train,neither
 mi_art.wav,art,train,neither
