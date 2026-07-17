@@ -2,6 +2,8 @@ from fastapi import FastAPI, UploadFile, File
 from transformers import WhisperForConditionalGeneration, WhisperProcessor
 from peft import PeftModel
 import torchaudio
+import io
+import time
 
 ADAPTER_PATH = "../adapters/adapter-personalize-demo"
 MODEL_PATH = "openai/whisper-small"
@@ -25,4 +27,22 @@ def health():
 @app.post("/transcribe")
 async def transcribe(file: UploadFile = File()):
     contents = await file.read()
-    return {"received" : len(contents)}
+
+    start = time.perf_counter()
+    waveform, sampling_rate = torchaudio.load(io.BytesIO(contents))
+    if waveform.shape[0] > 1:
+        waveform = waveform.mean(dim=0)
+    if sampling_rate != 16000:
+        waveform = torchaudio.functional.resample(waveform, sampling_rate, 16000)
+
+    waveform = waveform.squeeze()
+    waveform = waveform.numpy()
+    input_features = processor.feature_extractor(waveform, sampling_rate=16000, return_tensors="pt").input_features.to(device)
+
+    tokens = model.generate(input_features, language="en", task="transcribe", max_new_tokens=64)
+    predicted_text = processor.tokenizer.batch_decode(tokens, skip_special_tokens=True)[0]
+    end = time.perf_counter()
+    elapsed = (end - start) * 1000
+    
+    return {"text": predicted_text, "latency_ms": round(elapsed, 1)}
+
