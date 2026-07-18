@@ -5,7 +5,8 @@ import torchaudio
 import io
 import time
 
-ADAPTER_PATH = "../adapters/adapter-personalize-demo"
+POPULATION_ADAPTER_PATH = "../adapters/adapter-dropout"
+PERSONAL_ADAPTER_PATH = "../adapters/adapter-personalize-demo"
 MODEL_PATH = "openai/whisper-small"
 processor = WhisperProcessor.from_pretrained(MODEL_PATH)
 device = "cpu"
@@ -13,7 +14,8 @@ device = "cpu"
 model = WhisperForConditionalGeneration.from_pretrained(MODEL_PATH).to(device)
 model.config.forced_decoder_ids = None
 model.config.suppress_tokens = []
-model = PeftModel.from_pretrained(model, ADAPTER_PATH)
+model = PeftModel.from_pretrained(model, POPULATION_ADAPTER_PATH).merge_and_unload()
+model = PeftModel.from_pretrained(model, PERSONAL_ADAPTER_PATH)
 model = model.merge_and_unload()
 
 
@@ -43,6 +45,6 @@ async def transcribe(file: UploadFile = File()):
     predicted_text = processor.tokenizer.batch_decode(tokens, skip_special_tokens=True)[0]
     end = time.perf_counter()
     elapsed = (end - start) * 1000
-    
+
     return {"text": predicted_text, "latency_ms": round(elapsed, 1)}
 
