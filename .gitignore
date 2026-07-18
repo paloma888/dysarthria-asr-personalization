@@ -6,4 +6,5 @@ data/*
 *-lora-adapter/
 .DS_Store
 *.wav
+!app/test_fixtures/*.wav
 .env
