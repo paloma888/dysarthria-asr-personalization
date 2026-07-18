@@ -20,6 +20,7 @@ jobs:
         run: pip install -r requirements.txt
       
       - name: run tests
-        run: pytest app
+        run: pytest
+        working-directory: app
       - name: run Set A vocabulary leakage check
         run: python training/check_leakage.py
