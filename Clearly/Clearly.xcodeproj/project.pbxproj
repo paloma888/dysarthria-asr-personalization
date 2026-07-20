@@ -10,9 +10,22 @@
 		E49A8D12300D7D6600176122 /* Clearly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clearly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E49A8D46300D962300176122 /* Exceptions for "Clearly" folder in "Clearly" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E49A8D11300D7D6600176122 /* Clearly */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E49A8D14300D7D6600176122 /* Clearly */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E49A8D46300D962300176122 /* Exceptions for "Clearly" folder in "Clearly" target */,
+			);
 			path = Clearly;
 			sourceTree = "<group>";
 		};
@@ -251,9 +264,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G74V2H7RFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Clearly needs microphone access to transcribe speech.";
+				INFOPLIST_FILE = Clearly/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Clearly needs microphone access to transcribe.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -283,9 +298,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G74V2H7RFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Clearly needs microphone access to transcribe speech.";
+				INFOPLIST_FILE = Clearly/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Clearly needs microphone access to transcribe.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
